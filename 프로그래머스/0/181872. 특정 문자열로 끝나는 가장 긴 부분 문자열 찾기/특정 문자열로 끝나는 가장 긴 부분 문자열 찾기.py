@@ -1,4 +1,6 @@
+
+
 def solution(myString, pat):
-    last_index = myString.rfind(pat)
-    
-    return myString[:last_index + len(pat)]
+    for i in range(len(myString)-len(pat), -1, -1):
+        if myString[i : i+len(pat)] == pat:
+            return myString[:i+len(pat)]
