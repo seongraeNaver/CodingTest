@@ -1,12 +1,12 @@
 def solution(numbers):
-    max_product = float('-inf')  # 초기값을 음의 무한대로 설정 (가장 작은 값)
+    max_result = -1e9
     n = len(numbers)
     
-    # 모든 가능한 두 숫자 쌍을 탐색
     for i in range(n):
-        for j in range(i + 1, n):  # i와 j가 같은 쌍은 제외
-            product = numbers[i] * numbers[j]
-            if product > max_product:
-                max_product = product
+        for j in range(i+1, n):
+            result = numbers[i] * numbers[j]
+            if max_result < result:
+                max_result = result
                 
-    return max_product
+    return max_result
+    
