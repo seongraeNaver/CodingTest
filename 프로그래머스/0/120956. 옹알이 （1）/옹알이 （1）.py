@@ -1,12 +1,15 @@
 def solution(babbling):
-    a = ["aya","ye","woo","ma"]
-    answer = 0
+    result = 0
+    
     for i in babbling:
-        result = 0
-        for j in range(4):
-            if i.find(a[j]) != -1:
-                result += len(a[j])
-        if len(i) == result:
-            answer += 1
-        
-    return answer
+        cnt = 0
+        word = ''
+        for j in i:
+            word += j
+            if word in ['aya', 'ye', 'woo', 'ma']:
+                word = ''
+                cnt += 1
+        if len(word) == 0 and cnt > 0:
+                result += 1
+                
+    return result
